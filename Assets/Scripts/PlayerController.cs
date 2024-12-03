@@ -27,10 +27,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
+        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             Debug.Log("Forwards");
-            transform.position += transform.forward * Time.deltaTime * moveSpeed;
+            transform.position += transform.up * Time.deltaTime * moveSpeed;
         }
     }
 }

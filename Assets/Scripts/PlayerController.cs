@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 50f;
     [SerializeField] private float rotationAmt = 15f;
     [SerializeField] private int Health = 10;
-    private Rigidbody2D rb;
 
     //Getters and Setters
     public float GetMoveSpeed() { return moveSpeed; }
@@ -18,12 +18,6 @@ public class PlayerController : MonoBehaviour
     public void SetHealth(int Health) { Health = Health; }
 
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        rb = GetComponent<Rigidbody2D>();
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -31,6 +25,12 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Forwards");
             transform.position += transform.up * Time.deltaTime * moveSpeed;
+        }
+        if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)){
+            transform.Rotate(transform.rotation.x, transform.rotation.y, transform.rotation.z - rotationAmt);
+        }
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)){
+            transform.Rotate(transform.rotation.x, transform.rotation.y, transform.rotation.z + rotationAmt);
         }
     }
 }

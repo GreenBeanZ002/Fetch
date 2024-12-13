@@ -27,10 +27,10 @@ public class PlayerController : MonoBehaviour
             transform.position += transform.up * Time.deltaTime * moveSpeed;
         }
         if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)){
-            transform.Rotate(transform.rotation.x, transform.rotation.y, transform.rotation.z - rotationAmt);
+            transform.Rotate(transform.rotation.x * Time.deltaTime * 1, transform.rotation.y * Time.deltaTime * 1, transform.rotation.z - rotationAmt * Time.deltaTime * 1);
         }
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)){
-            transform.Rotate(transform.rotation.x, transform.rotation.y, transform.rotation.z + rotationAmt);
+            transform.Rotate(transform.rotation.x * Time.deltaTime * 1, transform.rotation.y * Time.deltaTime * 1, transform.rotation.z + rotationAmt * Time.deltaTime * 1);
         }
     }
 }

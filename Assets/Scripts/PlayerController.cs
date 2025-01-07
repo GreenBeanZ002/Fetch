@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed = 50f;
     [SerializeField] private float rotationAmt = 15f;
     [SerializeField] private int Health = 10;
+    public Rigidbody2D rb;
 
     //Getters and Setters
     public float GetMoveSpeed() { return moveSpeed; }
@@ -19,18 +20,13 @@ public class PlayerController : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if(Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
-        {
-            Debug.Log("Forwards");
-            transform.position += transform.up * Time.deltaTime * moveSpeed;
-        }
-        if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow)){
-            transform.Rotate(transform.rotation.x * Time.deltaTime * 1, transform.rotation.y * Time.deltaTime * 1, transform.rotation.z - rotationAmt * Time.deltaTime * 1);
-        }
-        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow)){
-            transform.Rotate(transform.rotation.x * Time.deltaTime * 1, transform.rotation.y * Time.deltaTime * 1, transform.rotation.z + rotationAmt * Time.deltaTime * 1);
-        }
+        float h = Input.GetAxis("Horizontal");
+        float v = Input.GetAxis("Vertical");
+
+        Vector3 tempVect = new Vector3(h, v, 0);
+        tempVect = tempVect.normalized * moveSpeed * Time.deltaTime;
+        rb.MovePosition(rb.transform.position + tempVect);
     }
 }

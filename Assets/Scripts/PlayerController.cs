@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed = 50f;
     public Rigidbody2D rb;
     private bool testBool = false;
+ 
 
     //Getters and Setters
     public float GetMoveSpeed() { return moveSpeed; }

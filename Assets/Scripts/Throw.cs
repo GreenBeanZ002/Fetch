@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using static System.Runtime.CompilerServices.RuntimeHelpers;
 
+
 public class Throw : MonoBehaviour
 {
     private bool GameStart;
+    [SerializeField] private Canvas togglePrompt;
 
     public bool GetGameStart() { return GameStart; }
     public void SetGameStart(bool GameStart) { GameStart = GameStart; }
@@ -22,7 +24,7 @@ public class Throw : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             Debug.Log("Space Pressed");
-
+            togglePrompt.enabled = false;
         }
 
     }

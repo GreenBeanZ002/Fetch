@@ -7,19 +7,22 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 50f;
     public Rigidbody2D rb;
-    private bool testBool = false;
+    private bool startBool = true;
  
 
     //Getters and Setters
     public float GetMoveSpeed() { return moveSpeed; }
     public void SetMoveSpeed(float mve) { moveSpeed = mve; }
 
+    public bool GetStart() { return startBool; }
+    public void SetStart(bool startTemp) { startBool = startTemp; }
+
 
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (testBool)
+        if (startBool)
         {
             float h = Input.GetAxis("Horizontal");
             float v = Input.GetAxis("Vertical");

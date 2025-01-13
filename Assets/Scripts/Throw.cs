@@ -4,13 +4,10 @@ using UnityEngine;
 using static System.Runtime.CompilerServices.RuntimeHelpers;
 
 
-public class Throw : MonoBehaviour
+public class Throw : PlayerController
 {
-    private bool GameStart;
     [SerializeField] private Canvas togglePrompt;
 
-    public bool GetGameStart() { return GameStart; }
-    public void SetGameStart(bool GameStart) { GameStart = GameStart; }
 
     // Start is called before the first frame update
     void Start()
@@ -23,6 +20,7 @@ public class Throw : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Space))
         {
+            SetStart(true);
             Debug.Log("Space Pressed");
             togglePrompt.enabled = false;
         }

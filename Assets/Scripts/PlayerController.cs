@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 50f;
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
     private bool startBool;
  
 
@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         startBool = false;
+        rb = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame

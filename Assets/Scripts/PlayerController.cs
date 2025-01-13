@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
 
     //Getters and Setters
     public float GetMoveSpeed() { return moveSpeed; }
-    public void SetMoveSpeed(float moveSpeed) { moveSpeed = moveSpeed; }
+    public void SetMoveSpeed(float mve) { moveSpeed = mve; }
 
 
 

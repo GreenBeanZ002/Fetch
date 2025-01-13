@@ -26,4 +26,8 @@ public class Throw : PlayerController
         }
 
     }
+    private void FixedUpdate()
+    {
+        
+    }
 }

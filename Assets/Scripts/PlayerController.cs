@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 50f;
     public Rigidbody2D rb;
-    private bool startBool = true;
+    private bool startBool;
  
 
     //Getters and Setters
@@ -18,11 +18,15 @@ public class PlayerController : MonoBehaviour
     public void SetStart(bool startTemp) { startBool = startTemp; }
 
 
+    void Start()
+    {
+        startBool = false;
+    }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (startBool)
+        if (GetStart() == false)
         {
             float h = Input.GetAxis("Horizontal");
             float v = Input.GetAxis("Vertical");

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Sniff : MonoBehaviour
@@ -12,12 +13,18 @@ public class Sniff : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Q))
         {
+            GameObject Line = GameObject.Find(“gameObj”);
+            if (Line)
+            {
+                Destroy(Line);
+            }
+}
             var gameObj = new GameObject();
             var lineRend = gameObj.AddComponent<LineRenderer>();
             lineRend.SetPosition(0, Dog.transform.position);
             lineRend.SetPosition(1, Ball.transform.position);
+            lineRend.material.SetColor("_Color", Color.green);
 
-            gameObj = null;
         }
     }
 }

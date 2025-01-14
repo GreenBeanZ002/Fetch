@@ -23,13 +23,18 @@ public class Throw : PlayerController
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            Vector2 direction = new Vector2((float)Random.Range(-1000, 1000), (float)Random.Range(-1000, 1000));
+            if (togglePrompt.enabled) 
+            {
+                Vector2 direction = new Vector2((float)Random.Range(-1000, 1000), (float)Random.Range(-1000, 1000));
 
-            float force = (float)Random.Range(-1000, 1000);
-            Rb.AddForce(direction * force);
-            SetStart(true);
-            Debug.Log("Space Pressed");
-            togglePrompt.enabled = false;
+                float force = (float)Random.Range(-1000, 1000);
+                Rb.AddForce(direction * force);
+                SetStart(true);
+                Debug.Log("Space Pressed");
+                togglePrompt.enabled = false;
+            }
+
+            
         }
 
     }

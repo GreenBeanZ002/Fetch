@@ -25,12 +25,13 @@ public class Throw : PlayerController
         {
             if (togglePrompt.enabled) 
             {
+                //sets a random direction and random amount of force for the ball before adding the force to the ball
                 Vector2 direction = new Vector2((float)Random.Range(-1000, 1000), (float)Random.Range(-1000, 1000));
-
                 float force = (float)Random.Range(-1000, 1000);
                 Rb.AddForce(direction * force);
+
+
                 SetStart(true);
-                Debug.Log("Space Pressed");
                 togglePrompt.enabled = false;
             }
 

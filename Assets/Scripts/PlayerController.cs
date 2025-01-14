@@ -35,8 +35,6 @@ public class PlayerController : MonoBehaviour
             Vector3 tempVect = new Vector3(h, v, 0);
             tempVect = tempVect.normalized * moveSpeed * Time.deltaTime;
             rb.MovePosition(rb.transform.position + tempVect);
-            Debug.Log("moving");
         }
-        Debug.Log("Active");
     }
 }

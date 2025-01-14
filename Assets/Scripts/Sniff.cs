@@ -13,13 +13,14 @@ public class Sniff : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Q))
         {
-            GameObject Line = GameObject.Find(“gameObj”);
-            if (Line)
+            foreach (var gObj in GameObject.FindGameObjectsWithTag("Line"))
             {
-                Destroy(Line);
+                Destroy(gObj);
             }
-}
+
+
             var gameObj = new GameObject();
+            gameObj.tag = "Line";
             var lineRend = gameObj.AddComponent<LineRenderer>();
             lineRend.SetPosition(0, Dog.transform.position);
             lineRend.SetPosition(1, Ball.transform.position);

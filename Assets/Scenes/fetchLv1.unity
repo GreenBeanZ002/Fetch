@@ -334,6 +334,7 @@ GameObject:
   - component: {fileID: 295205095}
   - component: {fileID: 295205099}
   - component: {fileID: 295205098}
+  - component: {fileID: 295205100}
   m_Layer: 0
   m_Name: dogPlayer
   m_TagString: Untagged
@@ -354,7 +355,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 10
-  rb: {fileID: 295205099}
 --- !u!212 &295205096
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -495,6 +495,20 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
+--- !u!114 &295205100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295205094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bb4e6c2a2856de40836cb4f82703733, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Dog: {fileID: 295205094}
+  Ball: {fileID: 1698826576}
 --- !u!1 &443240894
 GameObject:
   m_ObjectHideFlags: 0
@@ -1166,7 +1180,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 50
-  rb: {fileID: 0}
   togglePrompt: {fileID: 1916129852}
 --- !u!1 &1832392332
 GameObject:

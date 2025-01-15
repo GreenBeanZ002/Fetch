@@ -22,7 +22,7 @@ public class Sniff : MonoBehaviour
             var gameObj = new GameObject();
             gameObj.tag = "Line";
             var lineRend = gameObj.AddComponent<LineRenderer>();
-            lineRend.SetPosition(0, Dog.transform.position);
+            lineRend.SetPosition(0, Dog.transform.position +new Vector3(0, 0.1f, 0));
             lineRend.SetPosition(1, Ball.transform.position);
             lineRend.material.SetColor("_Color", Color.green);
 

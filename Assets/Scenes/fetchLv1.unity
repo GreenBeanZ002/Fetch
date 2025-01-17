@@ -510,6 +510,7 @@ GameObject:
   - component: {fileID: 295205099}
   - component: {fileID: 295205098}
   - component: {fileID: 295205100}
+  - component: {fileID: 295205101}
   m_Layer: 0
   m_Name: dogPlayer
   m_TagString: Untagged
@@ -684,6 +685,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dog: {fileID: 295205094}
   Ball: {fileID: 1698826576}
+--- !u!114 &295205101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 295205094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a01f40a195f9ac4187773c1f790238e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dogBreed: 1
+  dog: {fileID: 295205094}
+  dog_v1_up: {fileID: 528644379, guid: 6306170159f2e1640bf11416ee5d1090, type: 3}
+  dog_v1_down: {fileID: 1651341168, guid: 6306170159f2e1640bf11416ee5d1090, type: 3}
+  dog_v1_left: {fileID: -1808750407, guid: 6306170159f2e1640bf11416ee5d1090, type: 3}
+  dog_v1_right: {fileID: 517810152, guid: 6306170159f2e1640bf11416ee5d1090, type: 3}
+  dog_v1_idle: {fileID: -1733451966, guid: 6306170159f2e1640bf11416ee5d1090, type: 3}
+  dog_v2_up: {fileID: -215321998, guid: 6306170159f2e1640bf11416ee5d1090, type: 3}
+  dog_v2_down: {fileID: 107650318, guid: 6306170159f2e1640bf11416ee5d1090, type: 3}
+  dog_v2_left: {fileID: -371013401, guid: 6306170159f2e1640bf11416ee5d1090, type: 3}
+  dog_v2_right: {fileID: 58912121, guid: 6306170159f2e1640bf11416ee5d1090, type: 3}
+  dog_v2_idle: {fileID: 251521485, guid: 6306170159f2e1640bf11416ee5d1090, type: 3}
+  dog_v3_up: {fileID: 1247288276, guid: 6306170159f2e1640bf11416ee5d1090, type: 3}
+  dog_v3_down: {fileID: 331311838, guid: 6306170159f2e1640bf11416ee5d1090, type: 3}
+  dog_v3_left: {fileID: 1965555685, guid: 6306170159f2e1640bf11416ee5d1090, type: 3}
+  dog_v3_right: {fileID: 1557025102, guid: 6306170159f2e1640bf11416ee5d1090, type: 3}
+  dog_v3_idle: {fileID: 10932904, guid: 6306170159f2e1640bf11416ee5d1090, type: 3}
 --- !u!1 &443240894
 GameObject:
   m_ObjectHideFlags: 0

@@ -2,18 +2,23 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
+using TMPro; 
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 50f;
     private Rigidbody2D rb;
     private bool startBool;
+    private bool gotBall;
  
 
     //Getters and Setters
 
     public bool GetStart() { return startBool; }
     public void SetStart(bool startTemp) { startBool = startTemp; }
+
+    public bool GetGotBall() {  return gotBall; }
+    public void SetGotBall(bool ball) { gotBall = ball; }
 
 
     void Start()
@@ -34,6 +39,7 @@ public class PlayerController : MonoBehaviour
             tempVect = tempVect.normalized * moveSpeed * Time.deltaTime;
             rb.MovePosition(rb.transform.position + tempVect);
 
+            //clearing bits left by other scripts. 
             foreach (var gObj in GameObject.FindGameObjectsWithTag("Line"))
             {
                 Destroy(gObj);

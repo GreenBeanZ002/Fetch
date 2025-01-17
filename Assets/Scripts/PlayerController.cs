@@ -34,7 +34,6 @@ public class PlayerController : MonoBehaviour
         {
             float h = Input.GetAxis("Horizontal");
             float v = Input.GetAxis("Vertical");
-            Debug.Log("H" + h.ToString() + "V" + v.ToString());
             Vector3 tempVect = new Vector3(h, v, 0);
             tempVect = tempVect.normalized * moveSpeed * Time.deltaTime;
             rb.MovePosition(rb.transform.position + tempVect);
@@ -44,6 +43,16 @@ public class PlayerController : MonoBehaviour
             {
                 Destroy(gObj);
             }
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.collider.tag == "Ball")
+        {
+            Destroy(collision.gameObject);
+            SetGotBall(true);
+            Debug.Log("Got ball");
         }
     }
 }

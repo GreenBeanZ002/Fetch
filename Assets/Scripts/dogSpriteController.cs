@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class dogSpriteController : MonoBehaviour
 {
+    public int dogBreed = 1; 
     [SerializeField] private GameObject dog;
     [SerializeField] private Sprite dog_v1_up;
     [SerializeField] private Sprite dog_v1_down;
     [SerializeField] private Sprite dog_v1_left;
     [SerializeField] private Sprite dog_v1_right;
+    [SerializeField] private Sprite dog_v1_idle; 
     void Start()
     {
         
@@ -27,22 +29,30 @@ public class dogSpriteController : MonoBehaviour
                 switch (v) 
                 {
                     case < 0:
+                        dog.GetComponent<SpriteRenderer>().sprite = dog_v1_up;
                         break;
                     case > 0:
+                        dog.GetComponent<SpriteRenderer>().sprite = dog_v1_down;
                         break;
                     case 0:
+                        dog.GetComponent<SpriteRenderer>().sprite = dog_v1_left;
                         break;
+
                 }
                 break;
             case > 0:
                 switch (v) 
                 {
                     case < 0:
+                        dog.GetComponent<SpriteRenderer>().sprite = dog_v1_up;
                         break;
                     case > 0:
+                        dog.GetComponent<SpriteRenderer>().sprite = dog_v1_down;
                         break;
                     case 0:
+                        dog.GetComponent<SpriteRenderer>().sprite = dog_v1_right;
                         break;
+                        
                 }
                 break;
 
@@ -50,12 +60,17 @@ public class dogSpriteController : MonoBehaviour
                 switch (v)
                 {
                     case < 0:
+                        dog.GetComponent<SpriteRenderer>().sprite = dog_v1_left;
                         break;
                     case > 0:
+                        dog.GetComponent<SpriteRenderer>().sprite = dog_v1_right;
                         break;
                     case 0:
+                        dog.GetComponent<SpriteRenderer>().sprite = dog_v1_idle;
                         break;
+                        
                 }
+                dog.GetComponent<SpriteRenderer>().sprite = dog_v1_idle;
                 break;
 
         }

@@ -29,10 +29,10 @@ public class dogSpriteController : MonoBehaviour
                 switch (v) 
                 {
                     case < 0:
-                        dog.GetComponent<SpriteRenderer>().sprite = dog_v1_up;
+                        dog.GetComponent<SpriteRenderer>().sprite = dog_v1_down;
                         break;
                     case > 0:
-                        dog.GetComponent<SpriteRenderer>().sprite = dog_v1_down;
+                        dog.GetComponent<SpriteRenderer>().sprite = dog_v1_up;
                         break;
                     case 0:
                         dog.GetComponent<SpriteRenderer>().sprite = dog_v1_left;
@@ -44,10 +44,10 @@ public class dogSpriteController : MonoBehaviour
                 switch (v) 
                 {
                     case < 0:
-                        dog.GetComponent<SpriteRenderer>().sprite = dog_v1_up;
+                        dog.GetComponent<SpriteRenderer>().sprite = dog_v1_down;
                         break;
                     case > 0:
-                        dog.GetComponent<SpriteRenderer>().sprite = dog_v1_down;
+                        dog.GetComponent<SpriteRenderer>().sprite = dog_v1_up;
                         break;
                     case 0:
                         dog.GetComponent<SpriteRenderer>().sprite = dog_v1_right;
@@ -60,17 +60,16 @@ public class dogSpriteController : MonoBehaviour
                 switch (v)
                 {
                     case < 0:
-                        dog.GetComponent<SpriteRenderer>().sprite = dog_v1_left;
+                        dog.GetComponent<SpriteRenderer>().sprite = dog_v1_down;
                         break;
                     case > 0:
-                        dog.GetComponent<SpriteRenderer>().sprite = dog_v1_right;
+                        dog.GetComponent<SpriteRenderer>().sprite = dog_v1_up;
                         break;
                     case 0:
                         dog.GetComponent<SpriteRenderer>().sprite = dog_v1_idle;
                         break;
                         
                 }
-                dog.GetComponent<SpriteRenderer>().sprite = dog_v1_idle;
                 break;
 
         }

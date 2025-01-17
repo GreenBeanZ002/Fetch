@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             SetGotBall(true);
-            Debug.Log("Got ball");
+            Debug.Log("Got ball" + GetGotBall());
         }
     }
 }

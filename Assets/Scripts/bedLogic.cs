@@ -9,7 +9,7 @@ public class bedLogic : PlayerController
 
     [SerializeField] private Canvas winUI;
     [SerializeField] private TMP_Text winTxt;
-    public GameObject wonCheck;
+    private GameObject wonCheck;
 
     private void Start()
     {
@@ -21,29 +21,24 @@ public class bedLogic : PlayerController
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        wonCheck = GameObject.FindWithTag("Ball");
-        if (wonCheck != null)
+        if (collision.collider.tag == "Player")
         {
-            if (collision != null)
+            wonCheck = GameObject.FindWithTag("Ball");
+            if (wonCheck != null)
+                Debug.Log("Result" + GetGotBall());
+
             {
-                if (wonCheck != null)
+                winUI.enabled = true;
+                winTxt.text = "You need to get the ball.";
+                
+            }
+            if (wonCheck == null)
+            {
                 {
-                    Debug.Log("Result" + GetGotBall());
-
-                    {
-                        winUI.enabled = true;
-                        winTxt.text = "You won!";
-                    }
-                    if (wonCheck == null)
-                    {
-                        {
-                            winUI.enabled = true;
-                            winTxt.text = "You need to get the ball.";
-                        }
-
-                    }
-
+                    winUI.enabled = true;
+                    winTxt.text = "You won!";
                 }
+
             }
         }
     }

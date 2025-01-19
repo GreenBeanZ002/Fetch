@@ -21,24 +21,29 @@ public class bedLogic : PlayerController
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision != null)
+        wonCheck = GameObject.FindWithTag("Ball");
+        if (wonCheck != null)
         {
-            if (wonCheck!= null)
+            if (collision != null)
             {
-                Debug.Log("Result" + GetGotBall());
-                wonCheck = GameObject.FindWithTag("Ball");
+                if (wonCheck != null)
                 {
-                    winUI.enabled = true;
-                    winTxt.text = "You won!";
-                }
-            if(wonCheck == null) {
-                {
-                    winUI.enabled = true;
-                    winTxt.text = "You need to get the ball.";
-                }
+                    Debug.Log("Result" + GetGotBall());
+
+                    {
+                        winUI.enabled = true;
+                        winTxt.text = "You won!";
+                    }
+                    if (wonCheck == null)
+                    {
+                        {
+                            winUI.enabled = true;
+                            winTxt.text = "You need to get the ball.";
+                        }
+
+                    }
 
                 }
-
             }
         }
     }

@@ -6,6 +6,7 @@ using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private Canvas togglePrompt;
     [SerializeField] private float moveSpeed = 50f;
     private Rigidbody2D rb;
     private bool startBool;
@@ -30,7 +31,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (GetStart() == false)
+        if (togglePrompt.enabled != true)
         {
             float h = Input.GetAxis("Horizontal");
             float v = Input.GetAxis("Vertical");

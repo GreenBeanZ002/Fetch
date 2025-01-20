@@ -592,6 +592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93d5f0d116a03a042a1cbc0463161680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  togglePrompt: {fileID: 0}
   moveSpeed: 50
   winUI: {fileID: 1681864512}
   winTxt: {fileID: 552608002}
@@ -1164,6 +1165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cc665a1b650f5d4ca31310c7c809848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  togglePrompt: {fileID: 1916129852}
   moveSpeed: 10
 --- !u!212 &295205096
 SpriteRenderer:

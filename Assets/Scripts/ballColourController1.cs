@@ -13,18 +13,11 @@ public class ballColourController : MonoBehaviour
 
     public int GetBallColour () { return ballColor; }
     public void SetBallColor (int ballAmt) { ballColor = ballAmt; }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         switch (ballColor)
         {
+        //state machine which swaps the ball's sprite based on the value of the "BallColour" integer.
             case 1:
                 ball.GetComponent<SpriteRenderer>().sprite = ball1; 
                 break;

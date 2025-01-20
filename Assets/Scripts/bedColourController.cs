@@ -13,18 +13,11 @@ public class bedColourController : MonoBehaviour
 
     public int GetBedColour () { return bedColor; }
     public void SetBedColor (int bedAmt) { bedColor = bedAmt; }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         switch (bedColor)
         {
+            //state machine which swaps the bed's sprite based on the value of the "BedColour" integer.
             case 1:
                 bed.GetComponent<SpriteRenderer>().sprite = bed1; 
                 break;

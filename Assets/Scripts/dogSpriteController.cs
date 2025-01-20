@@ -21,12 +21,6 @@ public class dogSpriteController : MonoBehaviour
     [SerializeField] private Sprite dog_v3_left;
     [SerializeField] private Sprite dog_v3_right;
     [SerializeField] private Sprite dog_v3_idle;
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
 
@@ -38,6 +32,7 @@ public class dogSpriteController : MonoBehaviour
             case 1:
                 switch (h)
                 {
+                    //A state machine which switches the player's current sprite based on the direction of their movement. It does this for 3 different varieties of the dog. 
                     case < 0:
                         switch (v)
                         {

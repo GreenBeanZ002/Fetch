@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+        //moves player if the toggle prompt screen isn't active.
         if (togglePrompt.enabled != true)
         {
             float h = Input.GetAxis("Horizontal");
@@ -49,6 +50,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        //"Destroys" ball on collision, picking it up.
         if(collision.collider.tag == "Ball")
         {
             Destroy(collision.gameObject);

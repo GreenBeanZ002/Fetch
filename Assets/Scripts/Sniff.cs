@@ -20,6 +20,7 @@ public class Sniff : MonoBehaviour
                 Destroy(gObj);
             }
 
+            //If ball exists, draws a line to ball, otherwise draws a line to dog bed.
             ballCheck = GameObject.FindWithTag("Ball");
             if(ballCheck != null)
             {

@@ -49,6 +49,7 @@ public class ButtonScripts : MonoBehaviour
         Help.enabled = false;
         HUD.enabled = true;
     }
+    //The next 6 functions iterate through the cosmentic choices using two buttons apiece. 
     public void ChooseBreedNext()
     {
         if (BreedIncrement < MaxBreedIncrement)

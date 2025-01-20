@@ -15,14 +15,12 @@ public class bedLogic : PlayerController
     {
         winUI.enabled = false;
     }
-    void Update()
-    {
-
-    }
+    
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.collider.tag == "Player")
         {
+            //checks if any current game object has the "ball" tag and responds accordingly. 
             wonCheck = GameObject.FindWithTag("Ball");
             if (wonCheck != null)
                 Debug.Log("Result" + GetGotBall());

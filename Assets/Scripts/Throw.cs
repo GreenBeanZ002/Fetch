@@ -4,16 +4,16 @@ using UnityEngine;
 using static System.Runtime.CompilerServices.RuntimeHelpers;
 
 
-public class Throw : PlayerController
+public class Throw : MonoBehaviour
 {
-    [SerializeField] private Canvas togglePrompt;
-    private Rigidbody2D Rb; 
+    [SerializeField] private Canvas toggPrompt;
+    private Rigidbody2D Rb;
 
 
     // Start is called before the first frame update
     void Start()
     {
-        togglePrompt.enabled = true;
+        toggPrompt.enabled = true;
 
         Rb = GetComponent<Rigidbody2D>();
     }
@@ -23,7 +23,7 @@ public class Throw : PlayerController
     {
         if (Input.GetKey(KeyCode.Space))
         {
-            if (togglePrompt.enabled) 
+            if (toggPrompt.enabled)
             {
                 //sets a random direction and random amount of force for the ball before adding the force to the ball
                 Vector2 direction = new Vector2((float)Random.Range(-1000, 1000), (float)Random.Range(-1000, 1000));
@@ -31,16 +31,16 @@ public class Throw : PlayerController
                 Rb.AddForce(direction * force);
 
 
-                SetStart(true);
-                togglePrompt.enabled = false;
+
+                toggPrompt.enabled = false;
             }
 
-            
+
         }
 
     }
     private void FixedUpdate()
     {
-        
+
     }
 }

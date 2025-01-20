@@ -592,7 +592,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93d5f0d116a03a042a1cbc0463161680, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  togglePrompt: {fileID: 0}
+  togglePrompt: {fileID: 1916129852}
   moveSpeed: 50
   winUI: {fileID: 1681864512}
   winTxt: {fileID: 552608002}
@@ -5847,6 +5847,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4451641954335676606, guid: 8de59cdf3957232438decba24dc6ab16, type: 3}
+      propertyPath: toggPrompt
+      value: 
+      objectReference: {fileID: 1916129852}
     - target: {fileID: 4451641954335676606, guid: 8de59cdf3957232438decba24dc6ab16, type: 3}
       propertyPath: togglePrompt
       value: 

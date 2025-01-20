@@ -2,29 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UIElements;
-using TMPro; 
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private Canvas togglePrompt;
     [SerializeField] private float moveSpeed = 50f;
     private Rigidbody2D rb;
-    private bool startBool;
     private bool gotBall;
- 
+
 
     //Getters and Setters
 
-    public bool GetStart() { return startBool; }
-    public void SetStart(bool startTemp) { startBool = startTemp; }
-
-    public bool GetGotBall() {  return gotBall; }
+    public bool GetGotBall() { return gotBall; }
     public void SetGotBall(bool ball) { gotBall = ball; }
 
 
     void Start()
-    {
-        startBool = false;
+    { 
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -45,13 +40,19 @@ public class PlayerController : MonoBehaviour
             {
                 Destroy(gObj);
             }
+
+            //clearing bits left by other scripts. 
+            foreach (var gObj in GameObject.FindGameObjectsWithTag("Line"))
+            {
+                Destroy(gObj);
+            }
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
         //"Destroys" ball on collision, picking it up.
-        if(collision.collider.tag == "Ball")
+        if (collision.collider.tag == "Ball")
         {
             Destroy(collision.gameObject);
             SetGotBall(true);

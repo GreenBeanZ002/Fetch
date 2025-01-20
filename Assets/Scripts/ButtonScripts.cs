@@ -11,6 +11,11 @@ public class ButtonScripts : MonoBehaviour
     private int BreedIncrement;
     private int BallIncrement;
     private int BedIncrement;
+    private int MaxBreedIncrement = 3;
+    private int MaxBallIncrement = 4;
+    private int MaxBedIncrement = 4; 
+
+
     public dogSpriteController dogSpriteController;
     public bedColourController BedColourController;
     public ballColourController BallColourController;
@@ -44,16 +49,77 @@ public class ButtonScripts : MonoBehaviour
         Help.enabled = false;
         HUD.enabled = true;
     }
-    public void ChooseBreed()
+    public void ChooseBreedNext()
     {
-
+        if (BreedIncrement < MaxBreedIncrement)
+        {
+            BreedIncrement++;
+        }
+        else 
+        {
+            BreedIncrement = 1;
+        }
+        dogSpriteController.dogBreed = BreedIncrement; 
     }
-    public void ChooseBall()
+    public void ChooseBreedBack()
     {
-
+        if (BreedIncrement > 1)
+        {   
+            BreedIncrement--;   
+        }
+        else
+        {
+            BreedIncrement = MaxBreedIncrement;
+        }
+        dogSpriteController.dogBreed = BreedIncrement;
     }
-    public void ChooseBed()
+    public void ChooseBallNext()
     {
+        if (BallIncrement < MaxBallIncrement)
+        {
+            BallIncrement++;
+        }
+        else
+        {
+            BallIncrement = 1;
+        }
+        BallColourController.ballColor = BallIncrement;
+    }
+    public void ChooseBallBack()
+    {
+        if(BallIncrement > 1)
+        {
+            BallIncrement--;
+        }
+        else
+        {
+            BallIncrement = MaxBallIncrement;
+        }
+        BallColourController.ballColor = BallIncrement;
+    }
 
+    public void ChooseBedNext()
+    {
+        if (BedIncrement < MaxBedIncrement)
+        {
+            BedIncrement++;
+        }
+        else
+        {
+            BedIncrement = 1;
+        }
+        BedColourController.bedColor = BedIncrement;
+    }
+    public void ChooseBedBack()
+    {
+        if (BedIncrement > 1)
+        {
+            BedIncrement--;
+        }
+        else
+        {
+            BedIncrement = MaxBedIncrement;
+        }
+        BedColourController.bedColor = BedIncrement;
     }
 }

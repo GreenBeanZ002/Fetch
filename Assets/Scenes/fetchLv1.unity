@@ -1301,7 +1301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   togglePrompt: {fileID: 1916129852}
-  moveSpeed: 10
+  moveSpeed: 20
 --- !u!212 &295205096
 SpriteRenderer:
   m_ObjectHideFlags: 0

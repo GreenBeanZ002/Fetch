@@ -33,7 +33,15 @@ public class PlayerController : MonoBehaviour
             float v = Input.GetAxis("Vertical");
             Vector3 tempVect = new Vector3(h, v, 0);
             tempVect = tempVect.normalized * moveSpeed * Time.deltaTime;
-            rb.MovePosition(rb.transform.position + tempVect);
+            try
+            {
+                rb.MovePosition(rb.transform.position + tempVect);
+            }
+            catch
+            {
+                //gets rid of dumb errors which do nothing but cause me pain
+            }
+            
 
             //clearing bits left by other scripts. 
             foreach (var gObj in GameObject.FindGameObjectsWithTag("Line"))

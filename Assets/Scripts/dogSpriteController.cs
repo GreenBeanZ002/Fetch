@@ -4,23 +4,8 @@ using UnityEngine;
 
 public class dogSpriteController : MonoBehaviour
 {
-    public int dogBreed = 1; 
-    [SerializeField] private GameObject dog;
-    [SerializeField] private Sprite dog_v1_up;
-    [SerializeField] private Sprite dog_v1_down;
-    [SerializeField] private Sprite dog_v1_left;
-    [SerializeField] private Sprite dog_v1_right;
-    [SerializeField] private Sprite dog_v1_idle;
-    [SerializeField] private Sprite dog_v2_up;
-    [SerializeField] private Sprite dog_v2_down;
-    [SerializeField] private Sprite dog_v2_left;
-    [SerializeField] private Sprite dog_v2_right;
-    [SerializeField] private Sprite dog_v2_idle;
-    [SerializeField] private Sprite dog_v3_up;
-    [SerializeField] private Sprite dog_v3_down;
-    [SerializeField] private Sprite dog_v3_left;
-    [SerializeField] private Sprite dog_v3_right;
-    [SerializeField] private Sprite dog_v3_idle;
+    public int dogBreed = 1;
+    public Animator anim;
     void Update()
     {
 
@@ -29,171 +14,96 @@ public class dogSpriteController : MonoBehaviour
 
         switch (dogBreed)
         {
-            case 1:
-                switch (h)
+           switch (h)
+        {
+            //A state machine which switches the player's current sprite based on the direction of their movement. It does this for 3 different varieties of the dog. 
+            case < 0:
+                switch (v)
                 {
-                    //A state machine which switches the player's current sprite based on the direction of their movement. It does this for 3 different varieties of the dog. 
                     case < 0:
-                        switch (v)
-                        {
-                            case < 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v1_down;
-                                break;
-                            case > 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v1_up;
-                                break;
-                            case 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v1_left;
-                                break;
-
-                        }
+                        Down();
                         break;
                     case > 0:
-                        switch (v)
-                        {
-                            case < 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v1_down;
-                                break;
-                            case > 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v1_up;
-                                break;
-                            case 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v1_right;
-                                break;
-
-                        }
+                        Up();
                         break;
-
                     case 0:
-                        switch (v)
-                        {
-                            case < 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v1_down;
-                                break;
-                            case > 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v1_up;
-                                break;
-                            case 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v1_idle;
-                                break;
-
-                        }
+                        Left();
                         break;
-
-
 
                 }
                 break;
-            case 2:
-                switch (h)
+            case > 0:
+                switch (v)
                 {
                     case < 0:
-                        switch (v)
-                        {
-                            case < 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v2_down;
-                                break;
-                            case > 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v2_up;
-                                break;
-                            case 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v2_left;
-                                break;
-
-                        }
+                        Down();
                         break;
                     case > 0:
-                        switch (v)
-                        {
-                            case < 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v2_down;
-                                break;
-                            case > 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v2_up;
-                                break;
-                            case 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v2_right;
-                                break;
-
-                        }
+                        Up();
                         break;
-
                     case 0:
-                        switch (v)
-                        {
-                            case < 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v2_down;
-                                break;
-                            case > 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v2_up;
-                                break;
-                            case 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v2_idle;
-                                break;
-
-                        }
+                        Right();
                         break;
-
-
 
                 }
                 break;
-            case 3:
-                switch (h)
+
+            case 0:
+                switch (v)
                 {
                     case < 0:
-                        switch (v)
-                        {
-                            case < 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v3_down;
-                                break;
-                            case > 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v3_up;
-                                break;
-                            case 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v3_left;
-                                break;
-
-                        }
+                        Down();
                         break;
                     case > 0:
-                        switch (v)
-                        {
-                            case < 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v3_down;
-                                break;
-                            case > 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v3_up;
-                                break;
-                            case 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v3_right;
-                                break;
-
-                        }
+                        Up();
                         break;
-
                     case 0:
-                        switch (v)
-                        {
-                            case < 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v3_down;
-                                break;
-                            case > 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v3_up;
-                                break;
-                            case 0:
-                                dog.GetComponent<SpriteRenderer>().sprite = dog_v3_idle;
-                                break;
-
-                        }
+                        Idle();
                         break;
-
-
 
                 }
                 break;
+
+
+
+        
 
 
         }
+    }
+    void Up()
+    {
+        anim.SetBool("Down", false);
+        anim.SetBool("Up", true);
+        anim.SetBool("Right", false);
+        anim.SetBool("Left", false);
+    }
+    void Down() 
+    {
+        anim.SetBool("Down", true);
+        anim.SetBool("Up", false);
+        anim.SetBool("Right", false);
+        anim.SetBool("Left", false);
+    }   
+    void Right()
+    {
+        anim.SetBool("Down", false);
+        anim.SetBool("Up", false);
+        anim.SetBool("Right", true);
+        anim.SetBool("Left", false);
+    }
+    void Left()
+    {
+        anim.SetBool("Down", false);
+        anim.SetBool("Up", false);
+        anim.SetBool("Right", false);
+        anim.SetBool("Left", true);
+    }
+    void Idle()
+    {
+        anim.SetBool("Down", false);
+        anim.SetBool("Up", false);
+        anim.SetBool("Right", false);
+        anim.SetBool("Left", false);
     }
 }

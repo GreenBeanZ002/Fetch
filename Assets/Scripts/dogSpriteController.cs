@@ -12,8 +12,6 @@ public class dogSpriteController : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
-        switch (dogBreed)
-        {
            switch (h)
         {
             //A state machine which switches the player's current sprite based on the direction of their movement. It does this for 3 different varieties of the dog. 

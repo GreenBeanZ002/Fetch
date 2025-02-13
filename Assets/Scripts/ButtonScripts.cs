@@ -8,12 +8,16 @@ public class ButtonScripts : MonoBehaviour
     [SerializeField] private Canvas Settings;
     [SerializeField] private Canvas HUD;
     [SerializeField] private Canvas Help;
-    private int BreedIncrement;
-    private int BallIncrement;
-    private int BedIncrement;
+    public GameObject dogv1;
+    public GameObject dogv2;
+    public GameObject dogv3;
+    private int BreedIncrement = 1;
+    private int BallIncrement = 1;
+    private int BedIncrement = 1;
     private int MaxBreedIncrement = 3;
     private int MaxBallIncrement = 4;
-    private int MaxBedIncrement = 4; 
+    private int MaxBedIncrement = 4;
+    private Vector3 dogPos;
 
 
     public dogSpriteController dogSpriteController;
@@ -60,7 +64,29 @@ public class ButtonScripts : MonoBehaviour
         {
             BreedIncrement = 1;
         }
-        dogSpriteController.dogBreed = BreedIncrement; 
+
+        switch(BreedIncrement){
+            case 1:
+                GameObject thisDogv1 = GameObject.FindWithTag("Player");
+                dogPos = GameObject.FindWithTag("Player").transform.position;
+                Destroy(thisDogv1);
+                Instantiate(dogv1, dogPos, Quaternion.identity);
+                return;
+
+            case 2:
+                GameObject thisDogv2 = GameObject.FindWithTag("Player");
+                dogPos = GameObject.FindWithTag("Player").transform.position;
+                Destroy(thisDogv2);
+                Instantiate(dogv2, dogPos, Quaternion.identity);
+                return;
+
+            case 3:
+                GameObject thisDogv3 = GameObject.FindWithTag("Player");
+                dogPos = GameObject.FindWithTag("Player").transform.position;
+                Destroy(thisDogv3);
+                Instantiate(dogv3, dogPos, Quaternion.identity);
+                return;
+        } 
     }
     public void ChooseBreedBack()
     {

@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed = 50f;
     private Rigidbody2D rb;
     private bool gotBall;
+    
 
 
     //Getters and Setters
@@ -21,6 +22,8 @@ public class PlayerController : MonoBehaviour
     void Start()
     { 
         rb = GetComponent<Rigidbody2D>();
+        GameObject UIstore = GameObject.FindGameObjectWithTag("UI");
+        togglePrompt = UIstore.GetComponent<Canvas>();
     }
 
     // Update is called once per frame
